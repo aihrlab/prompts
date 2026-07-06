@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>База промптов по отделам</title>
+<style>
+  :root {
+    --navy: #1f2a44;
+    --blue: #2f6fed;
+    --bg: #f7f8fb;
+    --card: #ffffff;
+    --border: #e3e6ee;
+    --text: #222836;
+    --muted: #6b7280;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    padding: 40px 24px 80px;
+  }
+  .wrap { max-width: 900px; margin: 0 auto; }
+  h1 {
+    font-size: 28px;
+    color: var(--navy);
+    margin-bottom: 4px;
+  }
+  .subtitle {
+    color: var(--muted);
+    font-size: 15px;
+    margin-bottom: 36px;
+  }
+  .dept {
+    margin-bottom: 40px;
+  }
+  .dept-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 18px;
+    background: var(--navy);
+    color: #fff;
+    border-radius: 10px 10px 0 0;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .dept-icon { font-size: 20px; }
+  .prompt-list {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-top: none;
+    border-radius: 0 0 10px 10px;
+    overflow: hidden;
+  }
+  .prompt-item {
+    display: flex;
+    gap: 14px;
+    padding: 16px 18px;
+    border-bottom: 1px solid var(--border);
+  }
+  .prompt-item:last-child { border-bottom: none; }
+  .prompt-item:nth-child(even) { background: #fafbfd; }
+  .num {
+    flex: 0 0 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--blue);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
+  }
+  .prompt-body { flex: 1; min-width: 0; }
+  .task-name {
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 4px;
+    font-size: 15px;
+  }
+  .prompt-text {
+    color: var(--text);
+    font-size: 14.5px;
+    line-height: 1.5;
+    background: #f1f4fb;
+    border-left: 3px solid var(--blue);
+    padding: 8px 12px;
+    border-radius: 4px;
+  }
+  .footer {
+    margin-top: 40px;
+    color: var(--muted);
+    font-size: 13px;
+    text-align: center;
+  }
+  @media print {
+    body { background: #fff; padding: 0; }
+    .dept { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>База промптов по отделам</h1>
+  <div class="subtitle">Готовые формулировки запросов к ИИ для ежедневных задач команды</div>
+
+  <div class="dept">
+    <div class="dept-header"><span class="dept-icon">💼</span> Отдел продаж</div>
+    <div class="prompt-list">
+      <div class="prompt-item">
+        <div class="num">1</div>
+        <div class="prompt-body">
+          <div class="task-name">Холодный контакт</div>
+          <div class="prompt-text">Напиши структуру короткого холодного письма для B2B-клиента с целью назначить 15-минутный звонок.</div>
+        </div>
+      </div>
+      <div class="prompt-item">
+        <div class="num">2</div>
+        <div class="prompt-body">
+          <div class="task-name">Работа с возражениями</div>
+          <div class="prompt-text">Составь 3 вежливых и аргументированных варианта ответа на возражение клиента: "У вас слишком дорого".</div>
+        </div>
+      </div>
+      <div class="prompt-item">
+        <div class="num">3</div>
+        <div class="prompt-body">
+          <div class="task-name">Follow-up</div>
+          <div class="prompt-text">Напиши текст письма-напоминания (follow-up) для клиента, который после презентации взял паузу "подумать".</div>
+        </div>
+      </div>
+      <div class="prompt-item">
+        <div class="num">4</div>
+        <div class="prompt-body">
+          <div class="task-name">Скрипт звонка</div>
+          <div class="prompt-text">Напиши скрипт первого звонка для квалификации лида, используя элементы методики SPIN.</div>
+        </div>
+      </div>
+      <div class="prompt-item">
+        <div class="num">5</div>
+        <div class="prompt-body">
+          <div class="task-name">Коммерческое предложение</div>
+          <div class="prompt-text">Сделай шаблон структуры коммерческого предложения, где акцент сделан на финансовую выгоду для клиента, а не на характеристики продукта.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dept">
+    <div class="dept-header"><span class="dept-icon">📦</span> Закупки</div>
+    <div class="prompt-list">
+      <div class="prompt-item">
+        <div class="num">1</div>
+        <div class="prompt-body">
+          <div class="task-name">Запрос КП</div>
+          <div class="prompt-text">Составь официальное письмо новому поставщику с запросом коммерческого предложения, включая требования к срокам и условиям оплаты.</div>
+        </div>
+      </div>
+      <div class="prompt-item">
+        <div class="num">2</div>
+        <div class="prompt-body">
+          <div class="task-name">Переговоры</div>
+          <div class="prompt-text">Напиши аргументированное письмо текущему поставщику с просьбой увеличить отсрочку платежа с 15 до 30 дней, ссылаясь на наши объемы закупок.</div>
+        </div>
+      </div>
+      <div class="prompt-item">
+        <div class="num">3</div>
+        <div class="prompt-body">
+          <div class="task-name">Оценка рисков</div>
+          <div class="prompt-text">Создай чек-лист из 10 пунктов для проверки надежности и финансовой устойчивости нового контрагента.</div>
+        </div>
+      </div>
+      <div class="prompt-item">
+        <div class="num">4</div>
+        <div class="prompt-body">
+          <div class="task-name">Претензионная работа</div>
+          <div class="prompt-text">Сформулируй текст официальной претензии поставщику о поставке бракованной партии товара с требованием замены за его счет.</div>
+        </div>
+      </div>
+      <div class="prompt-item">
+        <div class="num">5</div>
+        <div class="prompt-body">
+          <div class="task-name">Аналитика выбора</div>
+          <div class="prompt-text">Предложи структуру таблицы для объективного сравнения условий 5 разных поставщиков (включая скрытые затраты и риски).</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dept">
+    <div class="dept-header"><span class="dept-icon">📣</span> Маркетинг</div>
+    <div class="prompt-list">
+      <div class="prompt-item">
+        <div class="num">1</div>
+        <div class="prompt-body">
+          <div class="task-name">Лид-магниты</div>
+          <div class="prompt-text">Придумай 5 нестандартных идей для лид-магнита (чек-лист, калькулятор, мини-курс) в нише [указать нишу].</div>
+        </div>
+      </div>
+      <div class="prompt-item">
+        <div class="num">2</div>
+        <div class="prompt-body">
+          <div class="task-name">Копирайтинг</div>
+          <div class="prompt-text">Напиши 5 вариантов цепляющих тем (subject lines) для email-рассылки с анонсом новой акции, чтобы максимизировать Open Rate.</div>
+        </div>
+      </div>
+      <div class="prompt-item">
+        <div class="num">3</div>
+        <div class="prompt-body">
+          <div class="task-name">Контент-план</div>
+          <div class="prompt-text">Составь контент-план на неделю для Telegram-канала компании: 2 продающих, 2 полезных и 1 развлекательный/вовлекающий пост.</div>
+        </div>
+      </div>
+      <div class="prompt-item">
+        <div class="num">4</div>
+        <div class="prompt-body">
+          <div class="task-name">Портрет ЦА</div>
+          <div class="prompt-text">Опиши портрет целевой аудитории нашего продукта по модели Jobs To Be Done (какую "работу" клиент хочет нанять наш продукт сделать).</div>
+        </div>
+      </div>
+      <div class="prompt-item">
+        <div class="num">5</div>
+        <div class="prompt-body">
+          <div class="task-name">Видео-контент</div>
+          <div class="prompt-text">Напиши сценарий для короткого вертикального видео (Reels/Shorts) на 30 секунд, который показывает главную боль клиента и ее решение нашим продуктом.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dept">
+    <div class="dept-header"><span class="dept-icon">📊</span> Аналитика</div>
+    <div class="prompt-list">
+      <div class="prompt-item">
+        <div class="num">1</div>
+        <div class="prompt-body">
+          <div class="task-name">SQL-запросы</div>
+          <div class="prompt-text">Напиши SQL-запрос для расчета конверсии из статуса "лид" в статус "сделка" в разрезе месяцев и менеджеров.</div>
+        </div>
+      </div>
+      <div class="prompt-item">
+        <div class="num">2</div>
+        <div class="prompt-body">
+          <div class="task-name">Дашборды</div>
+          <div class="prompt-text">Предложи 7 ключевых метрик (KPI) для дашборда руководителя отдела продаж, чтобы отслеживать воронку продаж.</div>
+        </div>
+      </div>
+      <div class="prompt-item">
+        <div class="num">3</div>
+        <div class="prompt-body">
+          <div class="task-name">Поиск проблем</div>
+          <div class="prompt-text">Составь пошаговый алгоритм (план действий): какие данные и гипотезы нужно проверить, если ежедневные продажи упали на 20%.</div>
+        </div>
+      </div>
+      <div class="prompt-item">
+        <div class="num">4</div>
+        <div class="prompt-body">
+          <div class="task-name">A/B тестирование</div>
+          <div class="prompt-text">Сформулируй 3 гипотезы для A/B-теста посадочной страницы, направленные на увеличение конверсии в заявку.</div>
+        </div>
+      </div>
+      <div class="prompt-item">
+        <div class="num">5</div>
+        <div class="prompt-body">
+          <div class="task-name">Очистка данных</div>
+          <div class="prompt-text">Напиши Python-код с использованием pandas для очистки датафрейма: удаления дубликатов, заполнения пропусков в числовых столбцах медианой и приведения дат к единому формату.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">База промптов · 4 отдела · 20 готовых запросов</div>
+</div>
+</body>
+</html>
